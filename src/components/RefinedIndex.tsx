@@ -78,7 +78,10 @@ export function RefinedIndex() {
                   <ul className="text-[10px] text-white/60 space-y-1 uppercase tracking-tighter">
                     <li>Paciência</li>
                     <li>Trabalho Equipe</li>
+                    <li>Programação</li>
                     <li>Criatividade</li>
+                    <li>Persistência</li>
+                    <li>Prototipação</li>
                     <li>Proatividade</li>
                   </ul>
                 </div>
