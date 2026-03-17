@@ -1,4 +1,3 @@
-import React from 'react';
 import { Mail, Instagram, Linkedin, GraduationCap, Code, Heart, Palette, Image, Layout } from 'lucide-react';
 
 export function RefinedIndex() {
