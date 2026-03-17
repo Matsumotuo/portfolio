@@ -13,9 +13,9 @@ export function RefinedIndex() {
           </div>
 
           <div className="space-y-4">
-            <h1 className="text-5xl lg:text-6xl font-black tracking-tighter text-white uppercase italic leading-none">
+            <h1 className="text-5xl lg:text-6xl font-black tracking-tighter text-white uppercase italic leading-none relative z-20">
               João Vitor<br />
-              <span className="text-amber-500">Matsumoto</span>
+              <span className="text-amber-500 block">Matsumoto</span>
             </h1>
             <p className="font-mono text-[10px] text-white/40 uppercase tracking-widest leading-relaxed">
               Designer UX/UI<br />

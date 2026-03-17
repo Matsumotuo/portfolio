@@ -16,7 +16,7 @@ const allSkills: Skill[] = [
   { name: 'Branding', icon: PenTool, size: 'w-36 h-36', position: 'lg:translate-y-20 lg:translate-x-10', rotate: 'rotate-0' },
   { name: 'Figma', icon: Figma, size: 'w-44 h-44', position: 'lg:-translate-y-10 lg:translate-x-20', rotate: 'rotate-0' },
   { name: 'UX Engineering', icon: Code2, size: 'w-38 h-38', position: 'lg:translate-y-10 lg:-translate-x-20', rotate: 'rotate-0' },
-  { name: 'Motion', icon: MousePointerClick, size: 'w-32 h-32', position: 'lg:translate-y-40 lg:translate-x-0', rotate: 'rotate-0' },
+  { name: 'Motion', icon: MousePointerClick, size: 'w-32 h-32', position: 'lg:translate-y-40', rotate: 'rotate-0' },
   { name: 'Visual Design', icon: Paintbrush, size: 'w-40 h-40', position: 'lg:-translate-y-20 lg:-translate-x-5', rotate: 'rotate-0' },
   { name: 'Acessibilidade', icon: Accessibility, size: 'w-32 h-32', position: 'lg:translate-y-5 lg:translate-x-40', rotate: 'rotate-0' },
   { name: 'Systems', icon: Layers, size: 'w-38 h-38', position: 'lg:translate-y-32 lg:-translate-x-32', rotate: 'rotate-0' },
