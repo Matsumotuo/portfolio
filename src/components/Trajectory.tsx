@@ -37,7 +37,7 @@ export function Trajectory() {
       <div className="max-w-[1700px] mx-auto">
         <div className="p-8 border-b border-white/5">
           <div className="flex items-center gap-3 font-mono text-[10px] tracking-[0.4em] text-amber-500 uppercase">
-            <span>[ TRAJECTORY_02 ]</span>
+            <span>[ TRAJETÓRIA_02 ]</span>
           </div>
         </div>
 
@@ -50,7 +50,7 @@ export function Trajectory() {
             >
               {/* Period */}
               <div className="space-y-4">
-                <span className="font-mono text-[9px] tracking-[0.3em] text-white/20 uppercase block">PERIOD</span>
+                <span className="font-mono text-[9px] tracking-[0.3em] text-white/20 uppercase block">PERÍODO</span>
                 <p className="font-mono text-[10px] text-white/60 tracking-widest">{item.period}</p>
               </div>
 
@@ -59,7 +59,7 @@ export function Trajectory() {
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 font-mono text-[9px] text-amber-500/60 uppercase tracking-widest">
                     {item.type === 'work' ? <Briefcase className="w-3 h-3" /> : <GraduationCap className="w-3 h-3" />}
-                    {item.type === 'work' ? 'EXPERIENCE' : 'EDUCATION'}
+                    {item.type === 'work' ? 'EXPERIÊNCIA' : 'FORMAÇÃO'}
                   </div>
                   <h3 className="text-2xl md:text-3xl font-black text-white uppercase italic tracking-tighter leading-none group-hover:text-amber-500 transition-colors">
                     {item.title}

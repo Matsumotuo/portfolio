@@ -9,7 +9,7 @@ export function RefinedIndex() {
         {/* Column 1: Index Label & Name */}
         <div className="p-8 space-y-24">
           <div className="flex items-center gap-3 font-mono text-[10px] tracking-[0.4em] text-amber-500 uppercase">
-            <span>[ INDEX_01 ]</span>
+            <span>[ ÍNDICE_01 ]</span>
           </div>
 
           <div className="space-y-4">
@@ -40,11 +40,11 @@ export function RefinedIndex() {
           </div>
 
           <div className="space-y-6">
-            <span className="font-mono text-[9px] tracking-[0.3em] text-white/20 uppercase">CONTACT</span>
+            <span className="font-mono text-[9px] tracking-[0.3em] text-white/20 uppercase">CONTATO</span>
             <div className="space-y-3">
-              <a href="mailto:joao.matsumoto@outlook.com" className="flex items-center gap-3 text-white/40 hover:text-amber-500 transition-colors group">
+              <a href="mailto:joaovitormatsumoto@hotmail.com" className="flex items-center gap-3 text-white/40 hover:text-amber-500 transition-colors group">
                 <Mail className="w-3.5 h-3.5" />
-                <span className="font-mono text-[10px] uppercase tracking-widest">joao.matsumoto@outlook.com</span>
+                <span className="font-mono text-[10px] uppercase tracking-widest">joaovitormatsumoto@hotmail.com</span>
               </a>
               <a href="https://instagram.com/matsuvv" target="_blank" className="flex items-center gap-3 text-white/40 hover:text-amber-500 transition-colors group">
                 <Instagram className="w-3.5 h-3.5" />
@@ -61,7 +61,7 @@ export function RefinedIndex() {
         {/* Column 3: Bio & Education */}
         <div className="p-8 space-y-16">
           <div className="space-y-6">
-            <span className="font-mono text-[9px] tracking-[0.3em] text-white/20 uppercase">ABOUT_ME</span>
+            <span className="font-mono text-[9px] tracking-[0.3em] text-white/20 uppercase">SOBRE MIM</span>
             <p className="text-sm text-white/60 leading-relaxed font-light">
               Me chamo <span className="text-white font-medium">João Vitor Matsumoto</span> e sou graduado em Análise e Desenvolvimento de Sistemas pela Universidade Positivo. Apesar de amador, sou apaixonado por fotografia, edição de vídeos e música. Costumo criar soluções criativas que unem funcionalidade e inovação, sempre buscando crescer e colaborar em projetos desafiadores. E uma curiosidade que gosto de peixes e sou de Pato Branco.
             </p>
@@ -70,11 +70,11 @@ export function RefinedIndex() {
           <div className="space-y-8">
             <div className="space-y-6">
               <span className="font-mono text-[9px] tracking-[0.3em] text-white/20 uppercase flex items-center gap-2">
-                <Code className="w-3 h-3" /> CORE_SKILLS
+                <Code className="w-3 h-3" /> HABILIDADES_PRINCIPAIS
               </span>
               <div className="grid grid-cols-2 gap-y-4 gap-x-8">
                 <div className="space-y-2">
-                  <span className="text-[9px] text-white/20 font-mono block">SOFT</span>
+                  <span className="text-[9px] text-white/20 font-mono block">INTERPESSOAIS</span>
                   <ul className="text-[10px] text-white/60 space-y-1 uppercase tracking-tighter">
                     <li>Paciência</li>
                     <li>Trabalho Equipe</li>
@@ -86,7 +86,7 @@ export function RefinedIndex() {
                   </ul>
                 </div>
                 <div className="space-y-2">
-                  <span className="text-[9px] text-white/20 font-mono block">HARD</span>
+                  <span className="text-[9px] text-white/20 font-mono block">TÉCNICAS</span>
                   <ul className="text-[10px] text-white/60 space-y-3 uppercase tracking-tighter">
                     <li className="flex items-center gap-2"><Layout className="w-3 h-3 text-amber-500/40" /> Figma</li>
                     <li className="flex items-center gap-2"><Palette className="w-3 h-3 text-amber-500/40" /> Illustrator</li>
@@ -98,7 +98,7 @@ export function RefinedIndex() {
 
             <div className="space-y-4">
               <span className="font-mono text-[9px] tracking-[0.3em] text-white/20 uppercase flex items-center gap-2">
-                <Heart className="w-3 h-3" /> INTERESTS
+                <Heart className="w-3 h-3" /> INTERESSES
               </span>
               <div className="flex flex-wrap gap-2">
                 {['Fotografia', 'Música', 'Edição de Vídeos', 'Peixes'].map((tag) => (
@@ -115,7 +115,7 @@ export function RefinedIndex() {
         <div className="p-8 space-y-16">
           <div className="space-y-4">
             <span className="font-mono text-[9px] tracking-[0.3em] text-white/20 uppercase flex items-center gap-2">
-              <GraduationCap className="w-3 h-3" /> EDUCATION
+              <GraduationCap className="w-3 h-3" /> FORMAÇÃO
             </span>
             <div className="space-y-2">
               <h4 className="text-xs font-bold text-white uppercase tracking-wider">Universidade Positivo</h4>

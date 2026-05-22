@@ -1,10 +1,14 @@
+import { useState } from 'react';
 import { ProjectDialog } from './ProjectDialog';
+
+type Role = "Todos" | "Design Gráfico" | "Design UX/UI" | "Filme Analógico";
 
 const projects = [
   {
     id: 1,
     title: "Di Kang (Resistência)",
     category: "Filme Super 8",
+    role: "Filme Analógico",
     imageUrl: "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/a958df234848565.Y3JvcCw0NjYzLDM2NDcsNDA0LDA.png",
     link: "https://www.behance.net/gallery/234848565/Di-Kang-(Resistencia)-FILME-ANALOGICO",
     tools: ['Super 8', 'Filme Analógico'],
@@ -16,6 +20,7 @@ const projects = [
     id: 2,
     title: "Questões+ | Redesign",
     category: "UX/UI",
+    role: "Design UX/UI",
     imageUrl: "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/895f80242768667.Y3JvcCwyNzYxLDIxNjAsNTQwLDA.png",
     link: "https://www.behance.net/gallery/242768667/Questoes-Redesign",
     tools: ['Figma', 'UX Research'],
@@ -27,6 +32,7 @@ const projects = [
     id: 3,
     title: "PacBank | Interface",
     category: "UX/UI",
+    role: "Design UX/UI",
     imageUrl: "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/3d4c28208717147.Y3JvcCw0Nzk0LDM3NTAsMTA2LDA.png",
     link: "https://www.behance.net/gallery/208717147/PacBank-Interface-Bancaria-Case-Study",
     tools: ['Figma', 'Design System'],
@@ -38,6 +44,7 @@ const projects = [
     id: 4,
     title: "Camiseta Leila Khaled",
     category: "Design Gráfico",
+    role: "Design Gráfico",
     imageUrl: "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/d60a0e198029149.Y3JvcCw3NTIsNTg4LDMxNiwxODg.png",
     link: "https://www.behance.net/gallery/198029149/Projeto-Camiseta-Leila-Khaled",
     tools: ['Photoshop', 'Branding'],
@@ -45,12 +52,14 @@ const projects = [
     images: [
       "/projects/leila.png",
       "/projects/leila2.png",
-      "/projects/leila3.png"]
+      "/projects/leila3.png"
+    ]
   },
   {
     id: 5,
     title: "New Programmation",
     category: "Tshirt Design",
+    role: "Design Gráfico",
     imageUrl: "/projects/np5.jpg",
     link: "https://www.behance.net/gallery/198028143/NewProgrammation",
     tools: ['Artwork', 'Graphic Design'],
@@ -65,6 +74,7 @@ const projects = [
     id: 6,
     title: "Wake Up Roddie",
     category: "Filme Super 8",
+    role: "Filme Analógico",
     imageUrl: "/projects/Sinopse4.jpg",
     link: "https://www.behance.net/gallery/208377081/Wake-Up-Roddie-Movie-Poster",
     tools: ['Poster Design', 'Film'],
@@ -73,81 +83,127 @@ const projects = [
       "/projects/roddie2.png",
       "/projects/roddie.png"
     ]
+  },
+  {
+    id: 7,
+    title: "L.I.A | Redesign Website",
+    category: "UX/UI",
+    role: "Design UX/UI",
+    imageUrl: "/projects/capalia.png",
+    link: "https://www.behance.net/gallery/248333613/LIA-redesign-website",
+    tools: ['Figma', 'UX Research', 'UI Design'],
+    description: "O projeto se concentrou na modernização da interface da plataforma LIA(Livro Inteligente Autossuficiente).Transformou um layout denso e fragmentado em uma experiência de aprendizagem limpa, intuitiva e unificada, tornando mais fácil para os usuários consumirem perfeitamente vários formatos de conteúdo educacional.",
+    images: [
+      "/projects/lia2.png",
+      "/projects/lia3.png",
+      "/projects/lia4.png",
+      "/projects/lia5.png"
+    ]
   }
 ];
 
 export function Creative() {
+  const [activeRole, setActiveRole] = useState<Role>("Todos");
+  const roles: Role[] = ["Todos", "Design Gráfico", "Design UX/UI", "Filme Analógico"];
+
+  const filteredProjects = activeRole === "Todos" 
+    ? projects 
+    : projects.filter(p => p.role === activeRole);
+
   return (
     <section id="creative" className="border-b border-white/5">
-      {projects.map((project, index) => (
-        <div key={project.id} className="max-w-[1700px] mx-auto grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/5 border-t border-white/5 first:border-t-0">
-
-          {/* Project Sidebar (Col 1-3) */}
-          <div className="md:col-span-3 p-6 space-y-8">
-            <div className="flex items-center gap-3 font-mono text-[10px] tracking-[0.4em] text-white/20 uppercase">
-              <span>[ PROJECT_0{index + 1} ]</span>
-            </div>
-
-            <div className="space-y-6">
-              <div className="space-y-1">
-                <span className="font-mono text-[9px] text-white/20 uppercase tracking-widest">CATEGORY</span>
-                <p className="font-mono text-[11px] text-amber-500 uppercase tracking-widest">{project.category}</p>
-              </div>
-              <div className="space-y-1">
-                <span className="font-mono text-[9px] text-white/20 uppercase tracking-widest">ROLE</span>
-                <p className="font-mono text-[10px] text-white/60 uppercase tracking-widest">Designer UX/UI</p>
-              </div>
-              <div className="space-y-1">
-                <span className="font-mono text-[9px] text-white/20 uppercase tracking-widest">TOOLS</span>
-                <div className="flex flex-wrap gap-2 pt-1 uppercase">
-                  {project.tools.map(tool => (
-                    <span key={tool} className="text-[9px] text-white/40 font-mono tracking-tighter border border-white/5 px-1.5 py-0.5 rounded-sm bg-white/5">
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Project Content (Col 4-12) */}
-          <div className="md:col-span-9 p-8 lg:p-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8 order-2 lg:order-1">
-                <div className="space-y-6">
-                  <h3 className={`font-black text-white uppercase italic tracking-tighter leading-[0.85] ${project.title.length > 15
-                    ? 'text-3xl md:text-4xl lg:text-5xl'
-                    : 'text-4xl md:text-5xl lg:text-6xl'
-                    }`}>
-                    {project.title}
-                  </h3>
-
-                  <p className="text-base text-white/60 leading-relaxed font-light max-w-xl">
-                    {project.description}
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-8 pt-6">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-white/20 hover:text-amber-500 transition-colors border-b border-white/10 pb-1"
-                  >
-                    VIEW_PROJECT
-                  </a>
-                </div>
-              </div>
-
-              {/* Project Image Aspect Trigger */}
-              <div className="order-1 lg:order-2 w-full lg:max-w-md xl:max-w-lg ml-auto">
-                <div className="relative group">
-                  <ProjectDialog project={project} />
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* Filters Bar */}
+      <div className="max-w-[1700px] mx-auto p-6 md:p-8 flex flex-wrap gap-6 items-center justify-center md:justify-start border-t border-white/5 bg-black/40 backdrop-blur-sm sticky top-0 z-40">
+        <div className="flex items-center gap-2 mr-4">
+          <span className="font-mono text-[9px] text-white/20 uppercase tracking-[0.3em]">FILTRO:</span>
         </div>
-      ))}
+        {roles.map(role => (
+          <button
+            key={role}
+            onClick={() => setActiveRole(role)}
+            className={`font-mono text-[10px] font-bold uppercase tracking-[0.3em] transition-all duration-300 border-b pb-1 ${
+              activeRole === role 
+                ? 'text-amber-500 border-amber-500/50' 
+                : 'text-white/40 border-transparent hover:text-white/80 hover:border-white/20'
+            }`}
+          >
+            [ {role} ]
+          </button>
+        ))}
+      </div>
+
+      {/* Projects List */}
+      <div className="animate-in fade-in duration-500">
+        {filteredProjects.map((project, index) => (
+          <div key={project.id} className="max-w-[1700px] mx-auto grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/5 border-t border-white/5 first:border-t-0">
+
+            {/* Project Sidebar (Col 1-3) */}
+            <div className="md:col-span-3 p-6 space-y-8">
+              <div className="flex items-center gap-3 font-mono text-[10px] tracking-[0.4em] text-white/20 uppercase">
+                <span>[ PROJETO_0{index + 1} ]</span>
+              </div>
+
+              <div className="space-y-6">
+                <div className="space-y-1">
+                  <span className="font-mono text-[9px] text-white/20 uppercase tracking-widest">CATEGORIA</span>
+                  <p className="font-mono text-[11px] text-amber-500 uppercase tracking-widest">{project.category}</p>
+                </div>
+                <div className="space-y-1">
+                  <span className="font-mono text-[9px] text-white/20 uppercase tracking-widest">PAPEL</span>
+                  <p className="font-mono text-[10px] text-white/60 uppercase tracking-widest">{project.role}</p>
+                </div>
+                <div className="space-y-1">
+                  <span className="font-mono text-[9px] text-white/20 uppercase tracking-widest">FERRAMENTAS</span>
+                  <div className="flex flex-wrap gap-2 pt-1 uppercase">
+                    {project.tools.map(tool => (
+                      <span key={tool} className="text-[9px] text-white/40 font-mono tracking-tighter border border-white/5 px-1.5 py-0.5 rounded-sm bg-white/5">
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Project Content (Col 4-12) */}
+            <div className="md:col-span-9 p-8 lg:p-12">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-8 order-2 lg:order-1">
+                  <div className="space-y-6">
+                    <h3 className={`font-black text-white uppercase italic tracking-tighter leading-[0.85] ${project.title.length > 15
+                      ? 'text-3xl md:text-4xl lg:text-5xl'
+                      : 'text-4xl md:text-5xl lg:text-6xl'
+                      }`}>
+                      {project.title}
+                    </h3>
+
+                    <p className="text-base text-white/60 leading-relaxed font-light max-w-xl">
+                      {project.description}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-8 pt-6">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-white/20 hover:text-amber-500 transition-colors border-b border-white/10 pb-1"
+                    >
+                      VER PROJETO
+                    </a>
+                  </div>
+                </div>
+
+                {/* Project Image Aspect Trigger */}
+                <div className="order-1 lg:order-2 w-full lg:max-w-md xl:max-w-lg ml-auto">
+                  <div className="relative group">
+                    <ProjectDialog project={project} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
