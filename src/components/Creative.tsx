@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import { ProjectDialog } from './ProjectDialog';
 
-type Role = "Todos" | "Design Gráfico" | "Design UX/UI" | "Filme Analógico";
+type Category = "Todos" | "Design Gráfico" | "Design UX/UI" | "Filme Analógico";
 
 const projects = [
   {
     id: 1,
     title: "Di Kang (Resistência)",
-    category: "Filme Super 8",
-    role: "Filme Analógico",
+    category: "Filme Analógico",
     imageUrl: "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/a958df234848565.Y3JvcCw0NjYzLDM2NDcsNDA0LDA.png",
     link: "https://www.behance.net/gallery/234848565/Di-Kang-(Resistencia)-FILME-ANALOGICO",
     tools: ['Super 8', 'Filme Analógico'],
@@ -19,8 +18,7 @@ const projects = [
   {
     id: 2,
     title: "Questões+ | Redesign",
-    category: "UX/UI",
-    role: "Design UX/UI",
+    category: "Design UX/UI",
     imageUrl: "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/895f80242768667.Y3JvcCwyNzYxLDIxNjAsNTQwLDA.png",
     link: "https://www.behance.net/gallery/242768667/Questoes-Redesign",
     tools: ['Figma', 'UX Research'],
@@ -31,8 +29,7 @@ const projects = [
   {
     id: 3,
     title: "PacBank | Interface",
-    category: "UX/UI",
-    role: "Design UX/UI",
+    category: "Design UX/UI",
     imageUrl: "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/3d4c28208717147.Y3JvcCw0Nzk0LDM3NTAsMTA2LDA.png",
     link: "https://www.behance.net/gallery/208717147/PacBank-Interface-Bancaria-Case-Study",
     tools: ['Figma', 'Design System'],
@@ -44,7 +41,6 @@ const projects = [
     id: 4,
     title: "Camiseta Leila Khaled",
     category: "Design Gráfico",
-    role: "Design Gráfico",
     imageUrl: "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/d60a0e198029149.Y3JvcCw3NTIsNTg4LDMxNiwxODg.png",
     link: "https://www.behance.net/gallery/198029149/Projeto-Camiseta-Leila-Khaled",
     tools: ['Photoshop', 'Branding'],
@@ -58,8 +54,7 @@ const projects = [
   {
     id: 5,
     title: "New Programmation",
-    category: "Tshirt Design",
-    role: "Design Gráfico",
+    category: "Design Gráfico",
     imageUrl: "/projects/np5.jpg",
     link: "https://www.behance.net/gallery/198028143/NewProgrammation",
     tools: ['Artwork', 'Graphic Design'],
@@ -73,8 +68,7 @@ const projects = [
   {
     id: 6,
     title: "Wake Up Roddie",
-    category: "Filme Super 8",
-    role: "Filme Analógico",
+    category: "Filme Analógico",
     imageUrl: "/projects/Sinopse4.jpg",
     link: "https://www.behance.net/gallery/208377081/Wake-Up-Roddie-Movie-Poster",
     tools: ['Poster Design', 'Film'],
@@ -87,8 +81,7 @@ const projects = [
   {
     id: 7,
     title: "L.I.A | Redesign Website",
-    category: "UX/UI",
-    role: "Design UX/UI",
+    category: "Design UX/UI",
     imageUrl: "/projects/capalia.png",
     link: "https://www.behance.net/gallery/248333613/LIA-redesign-website",
     tools: ['Figma', 'UX Research', 'UI Design'],
@@ -103,12 +96,12 @@ const projects = [
 ];
 
 export function Creative() {
-  const [activeRole, setActiveRole] = useState<Role>("Todos");
-  const roles: Role[] = ["Todos", "Design Gráfico", "Design UX/UI", "Filme Analógico"];
+  const [activeCategory, setActiveCategory] = useState<Category>("Todos");
+  const categories: Category[] = ["Todos", "Design Gráfico", "Design UX/UI", "Filme Analógico"];
 
-  const filteredProjects = activeRole === "Todos" 
+  const filteredProjects = activeCategory === "Todos" 
     ? projects 
-    : projects.filter(p => p.role === activeRole);
+    : projects.filter(p => p.category === activeCategory);
 
   return (
     <section id="creative" className="border-b border-white/5">
@@ -117,17 +110,17 @@ export function Creative() {
         <div className="flex items-center gap-2 mr-4">
           <span className="font-mono text-[9px] text-white/20 uppercase tracking-[0.3em]">FILTRO:</span>
         </div>
-        {roles.map(role => (
+        {categories.map(category => (
           <button
-            key={role}
-            onClick={() => setActiveRole(role)}
+            key={category}
+            onClick={() => setActiveCategory(category)}
             className={`font-mono text-[10px] font-bold uppercase tracking-[0.3em] transition-all duration-300 border-b pb-1 ${
-              activeRole === role 
+              activeCategory === category 
                 ? 'text-amber-500 border-amber-500/50' 
                 : 'text-white/40 border-transparent hover:text-white/80 hover:border-white/20'
             }`}
           >
-            [ {role} ]
+            [ {category} ]
           </button>
         ))}
       </div>
@@ -147,10 +140,6 @@ export function Creative() {
                 <div className="space-y-1">
                   <span className="font-mono text-[9px] text-white/20 uppercase tracking-widest">CATEGORIA</span>
                   <p className="font-mono text-[11px] text-amber-500 uppercase tracking-widest">{project.category}</p>
-                </div>
-                <div className="space-y-1">
-                  <span className="font-mono text-[9px] text-white/20 uppercase tracking-widest">PAPEL</span>
-                  <p className="font-mono text-[10px] text-white/60 uppercase tracking-widest">{project.role}</p>
                 </div>
                 <div className="space-y-1">
                   <span className="font-mono text-[9px] text-white/20 uppercase tracking-widest">FERRAMENTAS</span>
