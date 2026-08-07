@@ -16,17 +16,6 @@ const projects = [
     images: []
   },
   {
-    id: 2,
-    title: "Questões+ | Redesign",
-    category: "Design UX/UI",
-    imageUrl: "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/895f80242768667.Y3JvcCwyNzYxLDIxNjAsNTQwLDA.png",
-    link: "https://www.behance.net/gallery/242768667/Questoes-Redesign",
-    tools: ['Figma', 'UX Research'],
-    description: "Redesign estratégico focado em otimizar a jornada de estudo. A nova interface utiliza princípios de usabilidade e acessibilidade para reduzir a carga cognitiva, facilitando o foco através de uma hierarquia visual clara e paleta equilibrada.",
-    behanceEmbed: '<iframe src="https://www.behance.net/embed/project/242768667?ilo0=1" height="316" width="404" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>',
-    images: []
-  },
-  {
     id: 3,
     title: "PacBank | Interface",
     category: "Design UX/UI",
@@ -92,7 +81,18 @@ const projects = [
       "/projects/lia4.png",
       "/projects/lia5.png"
     ]
-  }
+},
+// New project entry
+  {
+    id: 8,
+    title: "PROCESSO DE INSCRIÇÃO | REDESIGN",
+    category: "Design UX/UI",
+    imageUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/252781277.jpg",
+    link: "https://www.behance.net/gallery/252781277/PROCESSO-DE-INSCRICAO-REDESIGN",
+    tools: ['Figma'],
+    description: "Redesign completo do fluxo de inscrição em faculdade, otimizando layout, navegação e experiência do usuário para tornar o processo mais intuitivo e eficiente.",
+    images: ["https://mir-s3-cdn-cf.behance.net/project_modules/fs/252781277.jpg"]
+  },
 ];
 
 export function Creative() {
