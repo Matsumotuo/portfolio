@@ -76,7 +76,7 @@ export function RefinedIndex() {
               </span>
               <div className="grid grid-cols-2 gap-y-4 gap-x-8">
                 <div className="space-y-2">
-                  <span className="text-[9px] text-white/20 font-mono block">INTERPESSOAIS</span>
+                  <span className="text-[9px] text-white/20 font-mono block">SOFT SKILLS</span>
                   <ul className="text-[10px] text-white/60 space-y-1 uppercase tracking-tighter">
                     <li>Paciência</li>
                     <li>Trabalho Equipe</li>
@@ -88,7 +88,7 @@ export function RefinedIndex() {
                   </ul>
                 </div>
                 <div className="space-y-2">
-                  <span className="text-[9px] text-white/20 font-mono block">TÉCNICAS</span>
+                  <span className="text-[9px] text-white/20 font-mono block">FERRAMENTAS</span>
                   <ul className="text-[10px] text-white/60 space-y-3 uppercase tracking-tighter">
                     <li className="flex items-center gap-2"><Layout className="w-3 h-3 text-amber-500/40" /> Figma</li>
                     <li className="flex items-center gap-2"><Palette className="w-3 h-3 text-amber-500/40" /> Illustrator</li>
@@ -103,7 +103,7 @@ export function RefinedIndex() {
                 <Heart className="w-3 h-3" /> INTERESSES
               </span>
               <div className="flex flex-wrap gap-2">
-                {['Fotografia', 'Música', 'Edição de Vídeos', 'Peixes'].map((tag) => (
+                {['Fotografia', 'Música', 'Edição de Vídeos', 'Peixes', 'Mandarim'].map((tag) => (
                   <span key={tag} className="px-2 py-1 bg-white/5 border border-white/5 rounded text-[9px] text-white/40 font-mono uppercase tracking-widest">
                     {tag}
                   </span>
