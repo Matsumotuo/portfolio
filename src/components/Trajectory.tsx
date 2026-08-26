@@ -2,7 +2,7 @@ import { Briefcase, GraduationCap } from 'lucide-react';
 
 const timeline = [
   {
-    period: "2025 – ATUAL",
+    period: "2025 – 2026",
     title: "DESIGNER UX/UI JÚNIOR",
     company: "IESDE Brasil",
     description: "Desenvolvimento de interfaces para todo o ambiente IESDE, produtos internso como externos, trabalhando em colaboração com os desenvolvedores direto para unir funcionalidade e estética.",

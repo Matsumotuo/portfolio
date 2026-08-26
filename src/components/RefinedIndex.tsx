@@ -32,6 +32,8 @@ export function RefinedIndex() {
               src="/projects/eu.jpeg"
               alt="João Vitor Matsumoto"
               className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
             <div className="absolute bottom-6 left-6 font-mono text-[9px] text-white/60">
@@ -130,6 +132,8 @@ export function RefinedIndex() {
                 src="/tumblr_obcp4fTQNc1vv62k7o1_250.jpg"
                 alt="Mystic Earth"
                 className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-40" />
             </div>

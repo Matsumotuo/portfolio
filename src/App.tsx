@@ -1,13 +1,11 @@
 import { RefinedIndex } from './components/RefinedIndex';
 import { Trajectory } from './components/Trajectory';
 import { Creative } from './components/Creative';
-import { CustomCursor } from './components/CustomCursor';
 import { AuroraBackground } from './components/AuroraBackground';
 
 function App() {
   return (
-    <div className="min-h-screen bg-transparent text-foreground relative selection:bg-amber-500/30 grain-overlay cursor-none selection:text-amber-500">
-      <CustomCursor />
+    <div className="min-h-screen bg-transparent text-foreground relative selection:bg-amber-500/30 grain-overlay selection:text-amber-500">
       <AuroraBackground />
 
       {/* Global Vertical Grid Lines (Blueprint Feel) */}

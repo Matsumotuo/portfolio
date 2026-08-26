@@ -87,11 +87,12 @@ const projects = [
     id: 8,
     title: "PROCESSO DE INSCRIÇÃO | REDESIGN",
     category: "Design UX/UI",
-    imageUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/252781277.jpg",
+    imageUrl: "/projects/capa.png",
     link: "https://www.behance.net/gallery/252781277/PROCESSO-DE-INSCRICAO-REDESIGN",
     tools: ['Figma'],
     description: "Redesign completo do fluxo de inscrição em faculdade, otimizando layout, navegação e experiência do usuário para tornar o processo mais intuitivo e eficiente.",
-    images: ["https://mir-s3-cdn-cf.behance.net/project_modules/fs/252781277.jpg"]
+    behanceEmbed: '<iframe src="https://www.behance.net/embed/project/252781277?ilo0=1" height="316" width="404" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>',
+    images: ["/projects/capa.png"]
   },
 ];
 
