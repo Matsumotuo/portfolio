@@ -65,7 +65,7 @@ export function RefinedIndex() {
           <div className="space-y-6">
             <span className="font-mono text-[9px] tracking-[0.3em] text-white/20 uppercase">SOBRE MIM</span>
             <p className="text-sm text-white/60 leading-relaxed font-light">
-              Me chamo <span className="text-white font-medium">João Vitor Matsumoto</span> e sou graduado em Análise e Desenvolvimento de Sistemas pela Universidade Positivo. Apesar de amador, sou apaixonado por fotografia, edição de vídeos e música. Costumo criar soluções criativas que unem funcionalidade e inovação, sempre buscando crescer e colaborar em projetos desafiadores. E uma curiosidade que gosto de peixes e sou de Pato Branco.
+              Me chamo <span className="text-white font-medium">João Vitor Matsumoto</span> e sou graduado em Análise e Desenvolvimento de Sistemas pela Universidade Positivo. Apesar de amador, sou apaixonado por fotografia, edição de vídeos e música. Costumo criar soluções criativas que unem funcionalidade e inovação, sempre buscando crescer e colaborar em projetos desafiadores. E uma curiosidade que estou aprendendo mandarim e sou de Pato Branco.
             </p>
           </div>
 

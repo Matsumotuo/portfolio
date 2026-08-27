@@ -1,4 +1,5 @@
-import { Briefcase, GraduationCap } from 'lucide-react';
+import { useRef } from 'react';
+import { Briefcase, GraduationCap, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const timeline = [
   {
@@ -32,17 +33,43 @@ const timeline = [
 ];
 
 export function Trajectory() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = direction === 'left' ? -420 : 420;
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="trajectory" className="border-t border-white/5 bg-black overflow-hidden">
       <div className="max-w-[1700px] mx-auto">
-        <div className="p-8 border-b border-white/5">
+        <div className="p-8 border-b border-white/5 flex items-center justify-between">
           <div className="flex items-center gap-3 font-mono text-[10px] tracking-[0.4em] text-amber-500 uppercase">
             <span>[ TRAJETÓRIA_02 ]</span>
+          </div>
+
+          <div className="flex items-center gap-3 font-mono">
+            <button
+              onClick={() => scroll('left')}
+              aria-label="Anterior"
+              className="p-2.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-amber-500/50 hover:text-amber-500 text-white/60 transition-all duration-300 active:scale-95 focus:outline-none"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => scroll('right')}
+              aria-label="Próximo"
+              className="p-2.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-amber-500/50 hover:text-amber-500 text-white/60 transition-all duration-300 active:scale-95 focus:outline-none"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
 
         {/* Horizontal Scroll Container */}
-        <div className="flex overflow-x-auto hide-scrollbar border-b border-white/5">
+        <div ref={scrollRef} className="flex overflow-x-auto hide-scrollbar border-b border-white/5 scroll-smooth">
           {timeline.map((item, index) => (
             <div
               key={index}
