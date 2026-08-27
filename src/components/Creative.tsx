@@ -104,26 +104,56 @@ export function Creative() {
     ? projects 
     : projects.filter(p => p.category === activeCategory);
 
+  const handleCategorySelect = (category: Category) => {
+    setActiveCategory(category);
+
+    // No celular, rola a tela suavemente para o início da lista de projetos filtrados
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      const section = document.getElementById('creative');
+      if (section) {
+        // Rola até o topo da seção garantindo que a barra fixa e os projetos fiquem visíveis
+        const yOffset = -10;
+        const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
-    <section id="creative" className="border-b border-white/5">
-      {/* Filters Bar */}
-      <div className="max-w-[1700px] mx-auto p-6 md:p-8 flex flex-wrap gap-6 items-center justify-center md:justify-start border-t border-white/5 bg-black/40 backdrop-blur-sm sticky top-0 z-40">
-        <div className="flex items-center gap-2 mr-4">
-          <span className="font-mono text-[9px] text-white/20 uppercase tracking-[0.3em]">FILTRO:</span>
+    <section id="creative" className="border-b border-white/5 scroll-mt-0">
+      {/* Filters Bar - Blueprint Tech Style */}
+      <div className="max-w-[1700px] mx-auto py-3 px-4 md:py-4 md:px-8 border-t border-white/5 bg-black/90 backdrop-blur-md sticky top-0 z-40">
+        <div className="flex items-center gap-2 overflow-x-auto hide-scrollbar scroll-smooth w-full">
+          
+          <span className="font-mono text-[9px] text-white/30 uppercase tracking-[0.25em] shrink-0 mr-2 select-none">
+            // FILTRO:
+          </span>
+
+          {categories.map((category, idx) => {
+            const count = category === "Todos" 
+              ? projects.length 
+              : projects.filter(p => p.category === category).length;
+            const isActive = activeCategory === category;
+
+            return (
+              <button
+                key={category}
+                onClick={() => handleCategorySelect(category)}
+                className={`font-mono text-xs uppercase tracking-wider px-3.5 py-2 transition-all duration-200 shrink-0 border flex items-center gap-2 touch-manipulation active:scale-95 ${
+                  isActive 
+                    ? 'bg-amber-500/10 border-amber-500/60 text-amber-400 font-bold' 
+                    : 'bg-white/[0.02] border-white/10 text-white/40 hover:text-white hover:border-white/20'
+                }`}
+              >
+                <span className="text-[10px] opacity-40">0{idx + 1}.</span>
+                <span>{category}</span>
+                <span className={`text-[10px] font-mono ${isActive ? 'text-amber-400/80' : 'text-white/20'}`}>
+                  ({count})
+                </span>
+              </button>
+            );
+          })}
         </div>
-        {categories.map(category => (
-          <button
-            key={category}
-            onClick={() => setActiveCategory(category)}
-            className={`font-mono text-[10px] font-bold uppercase tracking-[0.3em] transition-all duration-300 border-b pb-1 ${
-              activeCategory === category 
-                ? 'text-amber-500 border-amber-500/50' 
-                : 'text-white/40 border-transparent hover:text-white/80 hover:border-white/20'
-            }`}
-          >
-            [ {category} ]
-          </button>
-        ))}
       </div>
 
       {/* Projects List */}
