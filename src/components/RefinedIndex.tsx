@@ -1,4 +1,4 @@
-import { Mail, Instagram, Linkedin, GraduationCap, Code, Heart, Palette, Image, Layout } from 'lucide-react';
+import { Mail, Instagram, Linkedin, GraduationCap, Code, Heart, Palette, Image, Layout, Music } from 'lucide-react';
 
 export function RefinedIndex() {
   return (
@@ -93,7 +93,9 @@ export function RefinedIndex() {
                     <li className="flex items-center gap-2"><Layout className="w-3 h-3 text-amber-500/40" /> Figma</li>
                     <li className="flex items-center gap-2"><Palette className="w-3 h-3 text-amber-500/40" /> Illustrator</li>
                     <li className="flex items-center gap-2"><Image className="w-3 h-3 text-amber-500/40" /> Photoshop</li>
-                    <li className="flex items-center gap-2"><Image className="w-3 h-3 text-amber-500/40" /> Visual Studio</li>                  </ul>
+                    <li className="flex items-center gap-2"><Image className="w-3 h-3 text-amber-500/40" /> Visual Studio</li>
+                    <li className="flex items-center gap-2"><Music className="w-3 h-3 text-amber-500/40" /> Fl Studio</li>                  </ul>
+
                 </div>
               </div>
             </div>

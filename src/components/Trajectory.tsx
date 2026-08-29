@@ -109,14 +109,14 @@ export function Trajectory() {
         </div>
 
         {/* Horizontal Scroll Container */}
-        <div ref={scrollRef} className="flex overflow-x-auto hide-scrollbar border-b border-white/5 scroll-smooth">
+        <div ref={scrollRef} className="flex overflow-x-auto hide-scrollbar border-b border-white/5 scroll-smooth pl-0">
           {timeline.map((item, index) => {
             const isExpanded = expandedIndex === index;
 
             return (
               <div
                 key={index}
-                className="flex-none w-[320px] sm:w-[380px] md:w-[450px] border-r border-white/5 p-6 md:p-10 space-y-6 md:space-y-8 group hover:bg-white/[0.01] transition-colors last:border-r-0 flex flex-col justify-between"
+                className="flex-none w-[320px] sm:w-[380px] md:w-[420px] lg:w-[25%] border-r border-white/5 p-6 md:p-10 space-y-6 md:space-y-8 group hover:bg-white/[0.01] transition-colors last:border-r-0 flex flex-col justify-between"
               >
                 <div className="space-y-6">
                   {/* Period */}
@@ -137,7 +137,7 @@ export function Trajectory() {
                           {item.location}
                         </span>
                       </div>
-                      <h3 className="text-2xl md:text-3xl font-black text-white uppercase italic tracking-tighter leading-none group-hover:text-amber-500 transition-colors">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white uppercase italic tracking-tighter leading-none group-hover:text-amber-500 transition-colors break-words">
                         {item.title}
                       </h3>
                       <p className="font-mono text-[10px] text-white/40 uppercase tracking-widest">{item.company}</p>

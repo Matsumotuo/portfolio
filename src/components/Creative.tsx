@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ProjectDialog } from './ProjectDialog';
 
-type Category = "Todos" | "Design Gráfico" | "Design UX/UI" | "Filme Analógico";
+type Category = "Todos" | "Design Gráfico" | "Design UX/UI" | "Filme Analógico" | "Music";
 
 const projects = [
   {
@@ -81,8 +81,7 @@ const projects = [
       "/projects/lia4.png",
       "/projects/lia5.png"
     ]
-},
-// New project entry
+  },
   {
     id: 8,
     title: "PROCESSO DE INSCRIÇÃO | REDESIGN",
@@ -94,14 +93,25 @@ const projects = [
     behanceEmbed: '<iframe src="https://www.behance.net/embed/project/252781277?ilo0=1" height="316" width="404" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>',
     images: ["/projects/capa.png"]
   },
+  {
+    id: 9,
+    title: "feel good! | MUSIC",
+    category: "Music",
+    imageUrl: "/projects/capamusica.png",
+    link: "https://soundcloud.com/matsuuuu/feel-good-proddj-bob-kelson-dj-sergin",
+    tools: ['Music'],
+    description: "Musica ambiental, voltada pro EDM, totalmente experimental em parceria com Rodrigo Sergio Rosa. A ideia era ser um deep house.",
+    behanceEmbed: '<iframe height="316" width="404" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A880426327&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/matsuuuu" title="puxa frango" target="_blank" style="color: #cccccc; text-decoration: none;">puxa frango</a> · <a href="https://soundcloud.com/matsuuuu/feel-good-proddj-bob-kelson-dj-sergin" title="feel good! (prod.dj bob kelson &amp; dj sergin)" target="_blank" style="color: #cccccc; text-decoration: none;">feel good! (prod.dj bob kelson &amp; dj sergin)</a></div>',
+    images: ["/projects/capamusica.png"]
+  },
 ];
 
 export function Creative() {
   const [activeCategory, setActiveCategory] = useState<Category>("Todos");
-  const categories: Category[] = ["Todos", "Design Gráfico", "Design UX/UI", "Filme Analógico"];
+  const categories: Category[] = ["Todos", "Design Gráfico", "Design UX/UI", "Filme Analógico", "Music"];
 
-  const filteredProjects = activeCategory === "Todos" 
-    ? projects 
+  const filteredProjects = activeCategory === "Todos"
+    ? projects
     : projects.filter(p => p.category === activeCategory);
 
   const handleCategorySelect = (category: Category) => {
@@ -123,15 +133,15 @@ export function Creative() {
     <section id="creative" className="border-b border-white/5 scroll-mt-0">
       {/* Filters Bar - Blueprint Tech Style */}
       <div className="max-w-[1700px] mx-auto py-3 px-4 md:py-4 md:px-8 border-t border-white/5 bg-black/90 backdrop-blur-md sticky top-0 z-40">
-        <div className="flex items-center gap-2 overflow-x-auto hide-scrollbar scroll-smooth w-full">
-          
+        <div className="flex items-center gap-2 md:gap-3 overflow-x-auto hide-scrollbar scroll-smooth w-full">
+
           <span className="font-mono text-[9px] text-white/30 uppercase tracking-[0.25em] shrink-0 mr-2 select-none">
             // FILTRO:
           </span>
 
           {categories.map((category, idx) => {
-            const count = category === "Todos" 
-              ? projects.length 
+            const count = category === "Todos"
+              ? projects.length
               : projects.filter(p => p.category === category).length;
             const isActive = activeCategory === category;
 
@@ -139,11 +149,10 @@ export function Creative() {
               <button
                 key={category}
                 onClick={() => handleCategorySelect(category)}
-                className={`font-mono text-xs uppercase tracking-wider px-3.5 py-2 transition-all duration-200 shrink-0 border flex items-center gap-2 touch-manipulation active:scale-95 ${
-                  isActive 
-                    ? 'bg-amber-500/10 border-amber-500/60 text-amber-400 font-bold' 
-                    : 'bg-white/[0.02] border-white/10 text-white/40 hover:text-white hover:border-white/20'
-                }`}
+                className={`font-mono text-[11px] md:text-xs uppercase tracking-wider px-3 md:px-4 py-2 md:py-2.5 transition-all duration-200 shrink-0 border flex items-center gap-1.5 md:gap-2 touch-manipulation active:scale-95 whitespace-nowrap ${isActive
+                  ? 'bg-amber-500/10 border-amber-500/60 text-amber-400 font-bold'
+                  : 'bg-white/[0.02] border-white/10 text-white/40 hover:text-white hover:border-white/20'
+                  }`}
               >
                 <span className="text-[10px] opacity-40">0{idx + 1}.</span>
                 <span>{category}</span>

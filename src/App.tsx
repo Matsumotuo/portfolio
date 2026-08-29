@@ -13,8 +13,8 @@ function App() {
 
       <main className="relative z-10">
         <RefinedIndex />
-        <Trajectory />
         <Creative />
+        <Trajectory />
       </main>
 
       <footer className="py-20 text-center text-white/20 text-[10px] font-bold uppercase tracking-[0.5em] border-t border-white/5 relative z-10 bg-black/40 backdrop-blur-sm">
