@@ -2,12 +2,12 @@ import { Mail, Instagram, Linkedin, GraduationCap, Code, Heart, Palette, Image, 
 
 export function RefinedIndex() {
   return (
-    <section id="index" className="pt-32 border-b border-white/5">
+    <section id="index" className="pt-16 border-b border-white/5">
       {/* 4-Column Header Grid */}
       <div className="max-w-[1700px] mx-auto grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/5 border-t border-white/5">
 
         {/* Column 1: Index Label & Name */}
-        <div className="p-8 space-y-24">
+        <div className="p-8 space-y-8">
           <div className="flex items-center gap-3 font-mono text-[10px] tracking-[0.4em] text-amber-500 uppercase">
             <span>[ ÍNDICE_01 ]</span>
           </div>
@@ -25,7 +25,7 @@ export function RefinedIndex() {
         </div>
 
         {/* Column 2: Profile & Contact */}
-        <div className="p-8 space-y-12">
+        <div className="p-8 space-y-6">
           {/* Profile Photo */}
           <div className="aspect-[4/5] bg-white/5 rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 relative group border border-white/5">
             <img
@@ -42,15 +42,15 @@ export function RefinedIndex() {
           </div>
 
           <div className="space-y-6">
-            <span className="font-mono text-[9px] tracking-[0.3em] text-white/20 uppercase">CONTATO</span>
+            <span className="font-mono text-[10px] tracking-[0.3em] text-white/70 uppercase">CONTATO</span>
             <div className="space-y-3">
               <a href="mailto:joaovitormatsumoto@hotmail.com" className="flex items-center gap-3 text-white/40 hover:text-amber-500 transition-colors group">
                 <Mail className="w-3.5 h-3.5" />
                 <span className="font-mono text-[10px] uppercase tracking-widest">joaovitormatsumoto@hotmail.com</span>
               </a>
-              <a href="https://instagram.com/matsuvv" target="_blank" className="flex items-center gap-3 text-white/40 hover:text-amber-500 transition-colors group">
+              <a href="https://www.instagram.com/np_matsumoto/" target="_blank" className="flex items-center gap-3 text-white/40 hover:text-amber-500 transition-colors group">
                 <Instagram className="w-3.5 h-3.5" />
-                <span className="font-mono text-[10px] uppercase tracking-widest">@matsulovve</span>
+                <span className="font-mono text-[10px] uppercase tracking-widest">@np_matsumoto</span>
               </a>
               <a href="https://www.linkedin.com/in/joao-vitor-matsumoto-25b6071b9/" target="_blank" className="flex items-center gap-3 text-white/40 hover:text-amber-500 transition-colors group">
                 <Linkedin className="w-3.5 h-3.5" />
@@ -61,9 +61,9 @@ export function RefinedIndex() {
         </div>
 
         {/* Column 3: Bio & Education */}
-        <div className="p-8 space-y-16">
+        <div className="p-8 space-y-8">
           <div className="space-y-6">
-            <span className="font-mono text-[9px] tracking-[0.3em] text-white/20 uppercase">SOBRE MIM</span>
+            <span className="font-mono text-[12px] tracking-[0.3em] text-white/70 uppercase">SOBRE MIM</span>
             <p className="text-sm text-white/60 leading-relaxed font-light">
               Me chamo <span className="text-white font-medium">João Vitor Matsumoto</span> e sou graduado em Análise e Desenvolvimento de Sistemas pela Universidade Positivo. Apesar de amador, sou apaixonado por fotografia, edição de vídeos e música. Costumo criar soluções criativas que unem funcionalidade e inovação, sempre buscando crescer e colaborar em projetos desafiadores. E uma curiosidade que estou aprendendo mandarim e sou de Pato Branco.
             </p>
@@ -71,12 +71,12 @@ export function RefinedIndex() {
 
           <div className="space-y-8">
             <div className="space-y-6">
-              <span className="font-mono text-[9px] tracking-[0.3em] text-white/20 uppercase flex items-center gap-2">
-                <Code className="w-3 h-3" /> HABILIDADES_PRINCIPAIS
+              <span className="font-mono text-[12px] tracking-[0.3em] text-white/70 uppercase flex items-center gap-2">
+                <Code className="w-3 h-3 text-amber-500" /> HABILIDADES_PRINCIPAIS
               </span>
               <div className="grid grid-cols-2 gap-y-4 gap-x-8">
                 <div className="space-y-2">
-                  <span className="text-[9px] text-white/20 font-mono block">SOFT SKILLS</span>
+                  <span className="text-[12px] text-white/70 font-mono block">SOFT SKILLS</span>
                   <ul className="text-[10px] text-white/60 space-y-1 uppercase tracking-tighter">
                     <li>Paciência</li>
                     <li>Trabalho Equipe</li>
@@ -88,7 +88,7 @@ export function RefinedIndex() {
                   </ul>
                 </div>
                 <div className="space-y-2">
-                  <span className="text-[9px] text-white/20 font-mono block">FERRAMENTAS</span>
+                  <span className="text-[12px] text-white/70 font-mono block">FERRAMENTAS</span>
                   <ul className="text-[10px] text-white/60 space-y-3 uppercase tracking-tighter">
                     <li className="flex items-center gap-2"><Layout className="w-3 h-3 text-amber-500/40" /> Figma</li>
                     <li className="flex items-center gap-2"><Palette className="w-3 h-3 text-amber-500/40" /> Illustrator</li>
@@ -101,8 +101,8 @@ export function RefinedIndex() {
             </div>
 
             <div className="space-y-4">
-              <span className="font-mono text-[9px] tracking-[0.3em] text-white/20 uppercase flex items-center gap-2">
-                <Heart className="w-3 h-3" /> INTERESSES
+              <span className="font-mono text-[11px] tracking-[0.3em] text-white/70 uppercase flex items-center gap-2">
+                <Heart className="w-3 h-3 text-amber-500" /> INTERESSES
               </span>
               <div className="flex flex-wrap gap-2">
                 {['Fotografia', 'Música', 'Edição de Vídeos', 'Peixes', 'Mandarim'].map((tag) => (
@@ -116,10 +116,10 @@ export function RefinedIndex() {
         </div>
 
         {/* Column 4: Experience & Skills Summary */}
-        <div className="p-8 space-y-16">
+        <div className="p-8 space-y-8">
           <div className="space-y-4">
-            <span className="font-mono text-[9px] tracking-[0.3em] text-white/20 uppercase flex items-center gap-2">
-              <GraduationCap className="w-3 h-3" /> FORMAÇÃO
+            <span className="font-mono text-[11px] tracking-[0.3em] text-white/70 uppercase flex items-center gap-2">
+              <GraduationCap className="w-3 h-3 text-amber-500" /> FORMAÇÃO
             </span>
             <div className="space-y-2">
               <h4 className="text-xs font-bold text-white uppercase tracking-wider">Universidade Positivo</h4>
@@ -128,7 +128,7 @@ export function RefinedIndex() {
             </div>
           </div>
 
-          <div className="space-y-6 pt-8">
+          <div className="space-y-6">
             <div className="aspect-square bg-white/5 rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 relative group border border-white/5">
               <img
                 src="/tumblr_obcp4fTQNc1vv62k7o1_250.jpg"

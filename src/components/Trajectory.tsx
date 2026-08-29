@@ -121,7 +121,7 @@ export function Trajectory() {
                 <div className="space-y-6">
                   {/* Period */}
                   <div className="space-y-2">
-                    <span className="font-mono text-[9px] tracking-[0.3em] text-white/20 uppercase block">PERÍODO</span>
+                    <span className="font-mono text-[9px] tracking-[0.3em] text-white/70 uppercase block">PERÍODO</span>
                     <p className="font-mono text-[10px] text-white/60 tracking-widest">{item.period}</p>
                   </div>
 

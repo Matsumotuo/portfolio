@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ProjectDialog } from './ProjectDialog';
 
-type Category = "Todos" | "Design Gráfico" | "Design UX/UI" | "Filme Analógico" | "Music";
+type Category = "Todos" | "Design Gráfico" | "Design UX/UI" | "Filme Analógico" | "Musica";
 
 const projects = [
   {
@@ -96,10 +96,10 @@ const projects = [
   {
     id: 9,
     title: "feel good! | MUSIC",
-    category: "Music",
+    category: "Musica",
     imageUrl: "/projects/capamusica.png",
     link: "https://soundcloud.com/matsuuuu/feel-good-proddj-bob-kelson-dj-sergin",
-    tools: ['Music'],
+    tools: ['Musica'],
     description: "Musica ambiental, voltada pro EDM, totalmente experimental em parceria com Rodrigo Sergio Rosa. A ideia era ser um deep house.",
     behanceEmbed: '<iframe height="316" width="404" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A880426327&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/matsuuuu" title="puxa frango" target="_blank" style="color: #cccccc; text-decoration: none;">puxa frango</a> · <a href="https://soundcloud.com/matsuuuu/feel-good-proddj-bob-kelson-dj-sergin" title="feel good! (prod.dj bob kelson &amp; dj sergin)" target="_blank" style="color: #cccccc; text-decoration: none;">feel good! (prod.dj bob kelson &amp; dj sergin)</a></div>',
     images: ["/projects/capamusica.png"]
@@ -108,7 +108,7 @@ const projects = [
 
 export function Creative() {
   const [activeCategory, setActiveCategory] = useState<Category>("Todos");
-  const categories: Category[] = ["Todos", "Design Gráfico", "Design UX/UI", "Filme Analógico", "Music"];
+  const categories: Category[] = ["Todos", "Design Gráfico", "Design UX/UI", "Filme Analógico", "Musica"];
 
   const filteredProjects = activeCategory === "Todos"
     ? projects
@@ -172,17 +172,17 @@ export function Creative() {
 
             {/* Project Sidebar (Col 1-3) */}
             <div className="md:col-span-3 p-6 space-y-8">
-              <div className="flex items-center gap-3 font-mono text-[10px] tracking-[0.4em] text-white/20 uppercase">
+              <div className="flex items-center gap-3 font-mono text-[10px] tracking-[0.4em] text-white/30 uppercase">
                 <span>[ PROJETO_0{index + 1} ]</span>
               </div>
 
               <div className="space-y-6">
                 <div className="space-y-1">
-                  <span className="font-mono text-[9px] text-white/20 uppercase tracking-widest">CATEGORIA</span>
+                  <span className="font-mono text-[9px] text-white/70 uppercase tracking-widest">CATEGORIA</span>
                   <p className="font-mono text-[11px] text-amber-500 uppercase tracking-widest">{project.category}</p>
                 </div>
                 <div className="space-y-1">
-                  <span className="font-mono text-[9px] text-white/20 uppercase tracking-widest">FERRAMENTAS</span>
+                  <span className="font-mono text-[9px] text-white/70 uppercase tracking-widest">FERRAMENTAS</span>
                   <div className="flex flex-wrap gap-2 pt-1 uppercase">
                     {project.tools.map(tool => (
                       <span key={tool} className="text-[9px] text-white/40 font-mono tracking-tighter border border-white/5 px-1.5 py-0.5 rounded-sm bg-white/5">
